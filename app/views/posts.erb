@@ -1,0 +1,7 @@
+<% if @posts.size > 0 %>
+	<% @posts.each {|post| %>
+	<a href= <%= "/post/" + post.id.to_s %> ><%= post.title %></a>
+	<% } %>
+<% else %>
+	<p>There are none</p>
+<% end %>

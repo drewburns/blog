@@ -1,0 +1,16 @@
+<%= @error %>
+<form id = "create_post" action="/create" method="post">
+
+	<h3>Name of post:</h3>
+  	<input type="text" name="title">
+
+
+
+	<h3>Enter your post:</h3>
+  	<textarea name = "body" rows="10" cols="60"> </textarea>
+
+	<h3>Input the tags:</h3>
+  	<input type="text" name="tags">
+
+  	<input type="submit" value="Submit" >
+</form>
