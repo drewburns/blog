@@ -1,1 +1,26 @@
-<%= @thing.tag_id %>
+<header>
+	<a href="/"><h1 id = "site_name">Blog</h1></a>
+	<h3 id = "slogan">Just another blog</h3>
+
+	<% if @logged_in == false %>
+		<div id = "log_or_links"> <a  href="/login">Log In</a> </div>
+	<% else %>
+		<div id = "log_or_links"> <a href= <%= "/user/#{@current_user.name}" %> >My account</a> </div>
+	<% end %>
+
+	<div id = "log_or_links"><a href= <%= "/create" %>> New Post</a></div>
+</header>
+
+<div id = "index_body">
+	<h1>Latest Posts:</h1>
+	<% @posts.reverse.each {|post| %>
+		<div id = "post">
+		  <a  id = "title" href= <%="/post/"+ post.id.to_s %> >  <%= post.title %> </a> 
+		  <a id = "submitter" href= <%="/user/"+ post.user.name %> >  by <%= post.user.name %> </a>
+		  <h5>Tags: </h5>
+		  <% post.tags.each { |tag| %>
+			<a id = "tag" href= <%="/tag/"+ tag.name %>>  <%= tag.name %>  </a>
+		  <% } %>
+		</div>
+	<% } %>
+</div>

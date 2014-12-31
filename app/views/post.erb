@@ -1,4 +1,26 @@
-<h3><%= @post.title %></h3>
-<p><%= @post.body %></p>
+<header>
+	<a href="/"><h1 id = "site_name">Blog</h1></a>
+	<h3 id = "slogan">Just another blog</h3>
+
+	<% if @logged_in == false %>
+		<div id = "log_or_links"> <a  href="/login">Log In</a> </div>
+	<% else %>
+		<div id = "log_or_links"> <a href= <%= "/user/#{@current_user.name}" %> >My account</a> </div>
+	<% end %>
+		<div id = "log_or_links"><a href= <%= "/create" %>> New Post</a></div>
+</header>
+
+<div id = "post_main">
+
+	<h3 id = "post_title"><%= @post.title %></h3>
+	<h3 id = "post_title">by : <%= @post.user.name.capitalize %></h3>
+	<p id = "post_body"><%= @post.body %></p>
+	<ul id = "tag_list">
+		<h4>Tags:</h4>
+		<% @post.tags.each {|tag| %>
+		<li> <a href=<%= "/tag/" + tag.name %>> <%= tag.name %></a> </li>
+		<% } %>
+	</ul>
+</div>
 
 

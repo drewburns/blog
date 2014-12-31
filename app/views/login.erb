@@ -1,0 +1,23 @@
+<header>
+	<a href="/"><h1 id = "site_name">Blog</h1></a>
+	<h3 id = "slogan">Just another blog</h3>
+		<div id = "log_or_links"><a href= <%= "/create" %>> New Post</a></div>
+</header>
+<h1><%= @error %></h1>
+
+<form id = "login_form" action="/login" method="post">
+	<h2>Login to your account:</h2>
+ 	<label for="username">Enter your username</label>
+	<input name = "username" type = "text">
+	<input type="submit" value="Submit" >
+
+
+</form>
+
+<form id = "create_form" action="/newuser" method="post">
+	<h2>Create your account:</h2>
+ 	<label for="username">Enter your username</label>
+	<input name = "username" type = "text">
+	<input type="submit" value="Submit" >
+
+</form>

@@ -1,3 +1,176 @@
+/*header starts here*/
+
 html {
-	
+ 	background-color: white;
+}
+header {
+	margin-top: -1em;
+	width:100%;
+	background-color: #F7E9D2;
+	height: 100px;
+}
+
+#site_name {
+	color: black;
+	font-size: 50px;
+	float:left;
+	margin-left: 20px;
+	margin-top: 30px;
+	text-shadow: 2px 2px #4698EA;
+}
+
+#slogan {
+	float: left;
+	margin-top: 55px;
+	margin-left: 40px;
+	font-size: 30px;
+	text-shadow: 2px 2px #4698EA;
+}
+
+#log_or_links {
+	float: right;
+	margin-top: 50px;
+	margin-right: 20px;
+	height: 40px;
+	width: 100px;
+	background-color: #4698EA;
+	border-radius: 14px;
+}
+#log_or_links a {
+	text-decoration: none;
+	color:white;
+	margin-left: 13px;
+	padding-top: 5px;
+}
+#log_or_links a:visited {
+	text-decoration: none;
+}
+
+
+/*end header*/
+
+/*start index body*/
+#index_body {
+	width: 100%;
+}
+
+#index_body h1 {
+	margin-left: 20px; 
+}
+
+
+h5 {
+	color: white;
+	float: left;
+	margin-left: 50px;
+	font-size: 18px;
+}
+
+#tag {
+	color: white;
+	text-decoration: none;
+	float: left;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+#post {
+	height: 5em;
+	width: 100%;
+	border-bottom: 3px dotted white;
+	background-color: #4698EA;
+}	
+
+#title{
+	text-decoration: none;
+	margin-top: 20px;
+	margin-left: 20px;
+	float: left;
+	color:white;
+	font-size: 30px;
+}	
+
+#submitter{
+	text-decoration: none;
+	margin-top: 27px;
+	float: left;
+	margin-left: 50px;
+	color:white;
+	font-size: 25px;
+}
+/*end index body*/
+
+
+/*start login */
+
+#login_form {
+	width: 100%;
+	height: 200px;
+	margin: 10px;
+	border-bottom: 3px dotted gray;
+}
+
+#create_form {
+	width: 100%;
+	height: 200px;
+	margin: 10px;
+}
+
+/*end login*/
+
+#create_post {
+	clear: both;
+	margin-left: 20px;
+}
+#create_post h3 {
+	clear:both;
+}
+
+#delete_post {
+	margin-left: 20px;
+}
+
+
+#post_main {
+	border-top: 3px solid #4698EA;
+	clear: both;
+	margin-top: -22px;
+	height: 40em;
+	margin-left:27%; 
+	width: 50%;
+	float: left;
+	background-color: #4698EA;
+}
+
+#post_title {
+	color:white;
+	font-size: 30px;
+	text-align: center;
+}
+
+#post_body {
+	color: white;
+	text-align: center;
+	font-size: 19px;
+	margin-left: 10px;
+}
+
+#tag_list {
+	margin-top: 300px;
+	list-style-type: none;
+	list-style-position: horizontal;
+}
+
+#tag_list li {
+	display: inline;
+}
+h4 {
+	color:white;
+}
+
+#tag_list li a {
+	text-decoration: none;
+	color: white;
+	font-size: 19px;
+	padding: 10px;
 }

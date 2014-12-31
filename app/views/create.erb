@@ -1,4 +1,10 @@
-<%= @error %>
+<header>
+	<a href="/"><h1 id = "site_name">Blog</h1></a>
+	<h3 id = "slogan">Just another blog</h3>
+	<div id = "log_or_links"> <a href= <%= "/user/#{@current_user.name}" %> >My account</a> </div>
+</header>
+
+<p><%= @error %></p>
 <form id = "create_post" action="/create" method="post">
 
 	<h3>Name of post:</h3>
@@ -10,6 +16,7 @@
   	<textarea name = "body" rows="10" cols="60"> </textarea>
 
 	<h3>Input the tags:</h3>
+	<h4>Seperate them by commas</h4>
   	<input type="text" name="tags">
 
   	<input type="submit" value="Submit" >

@@ -1,18 +1,28 @@
 get '/posts' do
+	@logged_in = logged_in?
+	@current_user = current_user
 	@posts = Post.all
 	erb :posts
 end
 
 
 get '/create' do
-
-	erb :create
+	if logged_in?
+		@current_user = current_user
+		erb :create
+	else
+		@error = "You need to login first"
+		erb :login
+	end
 end
 
 post '/create' do
-	the_post = Post.new(title: params[:title],body: params[:body])
+	@current_user = current_user
+	@logged_in = logged_in?
+
+	the_post = Post.new(title: params[:title],body: params[:body], user_id: session[:user_id])
 	if the_post.valid?
-		post = Post.create(title: params[:title],body: params[:body])
+		post = Post.create(title: params[:title],body: params[:body], user_id: session[:user_id])
 		tag_array = []
 		holder = nil
 		tags = params[:tags]
@@ -35,24 +45,40 @@ post '/create' do
 end
 
 get '/post/:id' do
+	@current_user = current_user
+	@logged_in = logged_in?
+
 	@post = Post.find(params[:id])
+	@current_user = current_user
+	@logged_in = logged_in?
 	erb :post
 end
 
 get '/post/:id/edit' do
+	@current_user = current_user
+	@logged_in = logged_in?
 	@post = Post.find(params[:id])
-	erb :edit
+	if session[:user_id] == @post.user_id
+		erb :edit
+	else
+		@error = "Log in to edit your post"
+		erb :login
+	end
 end
 
 post '/post/:id/edit' do
+	@current_user = current_user
+	@logged_in = logged_in?
 	@post = Post.find(params[:id])
 	@post.update_attributes(title: params[:title],body: params[:body])
 	erb :post
 end
 
 post '/post/:id/delete' do
+	@current_user = current_user
+	@logged_in = logged_in?
 	@post = Post.find(params[:id])
 	@post.destroy
 
-	erb :index
+	redirect '/'
 end
